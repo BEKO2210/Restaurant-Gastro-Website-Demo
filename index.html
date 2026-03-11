@@ -10,7 +10,7 @@
 <meta property="og:description" content="Erleben Sie gehobene deutsch-mediterrane Küche im Herzen Münchens. Jetzt reservieren.">
 <meta property="og:type" content="restaurant">
 <meta property="og:locale" content="de_DE">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍴</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c9a84c' stroke-width='2' stroke-linecap='round'><path d='M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2'/><path d='M7 2v20'/><path d='M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7'/></svg>">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -314,7 +314,26 @@ a:hover { color: var(--clr-gold-light); }
     transition: right var(--transition);
   }
   .nav-links.open { right: 0; }
-  .nav-links a { font-size: 1rem; }
+  .nav-links a { font-size: 1rem; letter-spacing: 1px; }
+  .nav-cta {
+    margin-top: var(--space-sm);
+    text-align: center;
+    display: block;
+  }
+  .hero-badge {
+    white-space: normal;
+    padding: 10px 20px;
+    text-align: center;
+    max-width: 90%;
+    font-size: 0.75rem;
+    bottom: var(--space-xl);
+  }
+  .hero-scroll { bottom: var(--space-md); }
+  .hero-title { font-size: clamp(2rem, 8vw, 3rem); }
+  .hero-subtitle { font-size: 0.95rem; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .hero-ctas .btn { width: 100%; max-width: 280px; justify-content: center; }
+  .section-padding { padding-block: var(--space-lg); }
   .mobile-overlay {
     display: none;
     position: fixed;
@@ -506,17 +525,34 @@ a:hover { color: var(--clr-gold-light); }
   border-radius: var(--radius-lg);
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% 50%, rgba(201, 168, 76, 0.12) 0%, transparent 70%),
+    radial-gradient(circle at 30% 40%, rgba(201, 168, 76, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 70% 60%, rgba(201, 168, 76, 0.06) 0%, transparent 50%),
     linear-gradient(135deg, var(--clr-bg-card) 0%, var(--clr-surface) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid rgba(201, 168, 76, 0.1);
+}
+.about-visual-icon {
+  width: 64px;
+  height: 64px;
+  stroke: var(--clr-gold);
+  opacity: 0.3;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 .about-visual::before {
-  content: '🍷';
-  font-size: 8rem;
-  opacity: 0.3;
-  filter: grayscale(30%);
+  content: '';
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .about-visual::after {
   content: 'Seit 1987';
@@ -715,9 +751,17 @@ a:hover { color: var(--clr-gold-light); }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 6rem;
   opacity: 0.4;
   transition: transform var(--transition-slow), opacity var(--transition);
+}
+.highlight-card-bg svg {
+  width: 80px;
+  height: 80px;
+  stroke: var(--clr-gold);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 .highlight-card:hover .highlight-card-bg {
   transform: scale(1.1);
@@ -730,11 +774,7 @@ a:hover { color: var(--clr-gold-light); }
   right: 0;
   padding: var(--space-md);
   background: linear-gradient(transparent, rgba(15, 14, 12, 0.95));
-  transform: translateY(40px);
   transition: transform var(--transition);
-}
-.highlight-card:hover .highlight-card-content {
-  transform: translateY(0);
 }
 .highlight-badge {
   display: inline-block;
@@ -757,10 +797,8 @@ a:hover { color: var(--clr-gold-light); }
 .highlight-card p {
   font-size: var(--fs-small);
   color: var(--clr-text-muted);
-  opacity: 0;
-  transition: opacity var(--transition);
+  line-height: 1.5;
 }
-.highlight-card:hover p { opacity: 1; }
 .highlight-price {
   font-family: var(--ff-serif);
   color: var(--clr-gold);
@@ -773,9 +811,7 @@ a:hover { color: var(--clr-gold-light); }
     grid-template-columns: 1fr;
     gap: var(--space-sm);
   }
-  .highlight-card { height: 300px; }
-  .highlight-card-content { transform: translateY(0); }
-  .highlight-card p { opacity: 1; }
+  .highlight-card { height: 280px; }
 }
 
 /* ══════════════════════════════════════════
@@ -1288,7 +1324,9 @@ a:hover { color: var(--clr-gold-light); }
           </div>
         </div>
       </div>
-      <div class="about-visual reveal" aria-label="Dekoratives Bild — Weinglas"></div>
+      <div class="about-visual reveal" aria-label="Dekoratives Bild">
+        <svg class="about-visual-icon" viewBox="0 0 24 24"><path d="M8 2h8l-2 8h2l-6 12 1-7H8l2-8H8z"/></svg>
+      </div>
     </div>
   </div>
 </section>
@@ -1530,7 +1568,7 @@ a:hover { color: var(--clr-gold-light); }
     </div>
     <div class="highlights-grid">
       <div class="highlight-card reveal" tabindex="0">
-        <div class="highlight-card-bg" aria-hidden="true">🥩</div>
+        <div class="highlight-card-bg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 11h.01M11 15h.01M16 16c1.5-1.5 1-4-1-6s-4.5-2.5-6-1L3 15l6 6 6-6z"/></svg></div>
         <div class="highlight-card-content">
           <span class="highlight-badge">Chef's Choice</span>
           <h3>Rinderfilet „Goldene Gabel"</h3>
@@ -1539,7 +1577,7 @@ a:hover { color: var(--clr-gold-light); }
         </div>
       </div>
       <div class="highlight-card reveal" tabindex="0">
-        <div class="highlight-card-bg" aria-hidden="true">🐟</div>
+        <div class="highlight-card-bg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.46-3.44 6-7 6-3.56 0-7.56-2.54-8.5-6z"/><path d="M2 12s2-2 4-2"/><circle cx="16" cy="12" r="1"/></svg></div>
         <div class="highlight-card-content">
           <span class="highlight-badge">Mediterran</span>
           <h3>Wolfsbarsch aus dem Ofen</h3>
@@ -1548,7 +1586,7 @@ a:hover { color: var(--clr-gold-light); }
         </div>
       </div>
       <div class="highlight-card reveal" tabindex="0">
-        <div class="highlight-card-bg" aria-hidden="true">🍫</div>
+        <div class="highlight-card-bg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 015 5c0 2-1.5 3.5-3 4.5V14H10v-2.5C8.5 10.5 7 9 7 7a5 5 0 015-5z"/><path d="M10 14v3a2 2 0 004 0v-3"/><path d="M8 22h8"/><path d="M12 17v5"/></svg></div>
         <div class="highlight-card-content">
           <span class="highlight-badge">Dessert-Star</span>
           <h3>Schokoladen-Fondant</h3>
