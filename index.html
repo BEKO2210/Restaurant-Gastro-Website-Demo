@@ -1,0 +1,1992 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Goldene Gabel — Gehobene deutsch-mediterrane Küche in München</title>
+<meta name="description" content="Goldene Gabel: Gehobene deutsch-mediterrane Küche im Herzen Münchens. Frische, saisonale Zutaten, erlesene Weine und ein unvergessliches Ambiente. Jetzt Tisch reservieren.">
+<meta name="keywords" content="Restaurant München, deutsch-mediterran, Fine Dining, gehobene Küche, Reservierung München">
+<meta property="og:title" content="Goldene Gabel — Gehobene Küche in München">
+<meta property="og:description" content="Erleben Sie gehobene deutsch-mediterrane Küche im Herzen Münchens. Jetzt reservieren.">
+<meta property="og:type" content="restaurant">
+<meta property="og:locale" content="de_DE">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍴</text></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Goldene Gabel",
+  "image": "",
+  "servesCuisine": ["Deutsch", "Mediterran"],
+  "priceRange": "€€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Maximilianstraße 42",
+    "addressLocality": "München",
+    "postalCode": "80539",
+    "addressCountry": "DE"
+  },
+  "telephone": "+49-89-12345678",
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"], "opens": "11:30", "closes": "23:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "17:00", "closes": "00:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "11:30", "closes": "15:00" }
+  ],
+  "acceptsReservations": "True",
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "324" }
+}
+</script>
+<style>
+/* ══════════════════════════════════════════
+   CSS CUSTOM PROPERTIES
+   ══════════════════════════════════════════ */
+:root {
+  /* Farben — warm & elegant */
+  --clr-bg: #0f0e0c;
+  --clr-bg-alt: #1a1814;
+  --clr-bg-card: #221f1a;
+  --clr-surface: #2a2620;
+  --clr-gold: #c9a84c;
+  --clr-gold-light: #e2c97e;
+  --clr-gold-dark: #a68a3a;
+  --clr-cream: #f5f0e8;
+  --clr-cream-dim: #d4cfc6;
+  --clr-text: #e8e2d6;
+  --clr-text-muted: #9e978a;
+  --clr-accent: #8b3a3a;
+  --clr-success: #4a7c59;
+  --clr-vegan: #5a8f4a;
+  --clr-veggie: #c49b2a;
+  --clr-overlay: rgba(15, 14, 12, 0.7);
+
+  /* Typografie */
+  --ff-serif: 'Georgia', 'Times New Roman', 'Palatino', serif;
+  --ff-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --fs-hero: clamp(2.5rem, 6vw, 5rem);
+  --fs-h1: clamp(2rem, 4vw, 3.2rem);
+  --fs-h2: clamp(1.5rem, 3vw, 2.2rem);
+  --fs-h3: clamp(1.1rem, 2vw, 1.4rem);
+  --fs-body: clamp(0.95rem, 1.2vw, 1.1rem);
+  --fs-small: clamp(0.8rem, 1vw, 0.9rem);
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+  --space-2xl: 8rem;
+
+  /* Sonstiges */
+  --radius: 8px;
+  --radius-lg: 16px;
+  --shadow: 0 4px 30px rgba(0,0,0,0.3);
+  --transition: 0.3s ease;
+  --transition-slow: 0.6s ease;
+  --nav-height: 80px;
+  --nav-height-scrolled: 60px;
+}
+
+/* ══════════════════════════════════════════
+   RESET & BASIS
+   ══════════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height-scrolled);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: var(--ff-sans);
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  color: var(--clr-text);
+  background-color: var(--clr-bg);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a {
+  color: var(--clr-gold);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover { color: var(--clr-gold-light); }
+
+::selection {
+  background: var(--clr-gold);
+  color: var(--clr-bg);
+}
+
+.container {
+  width: min(90%, 1200px);
+  margin-inline: auto;
+}
+
+.section-padding {
+  padding-block: var(--space-xl);
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+.section-label {
+  font-family: var(--ff-sans);
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--clr-gold);
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+.section-title {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-h1);
+  color: var(--clr-cream);
+  font-weight: 400;
+  line-height: 1.2;
+}
+.section-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--clr-gold);
+  margin: var(--space-sm) auto 0;
+}
+
+/* Scroll-Animationen */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ══════════════════════════════════════════
+   NAVIGATION
+   ══════════════════════════════════════════ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  z-index: 1000;
+  transition: height var(--transition), background var(--transition), box-shadow var(--transition);
+  display: flex;
+  align-items: center;
+}
+.nav.scrolled {
+  height: var(--nav-height-scrolled);
+  background: rgba(15, 14, 12, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 2px 30px rgba(0,0,0,0.4);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(90%, 1200px);
+  margin-inline: auto;
+}
+.nav-logo {
+  font-family: var(--ff-serif);
+  font-size: 1.4rem;
+  color: var(--clr-gold);
+  letter-spacing: 2px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.nav-logo span {
+  color: var(--clr-cream);
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: var(--space-md);
+  align-items: center;
+}
+.nav-links a {
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--clr-cream-dim);
+  position: relative;
+  padding-bottom: 4px;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--clr-gold);
+  transition: width var(--transition);
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--clr-gold);
+}
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+.nav-cta {
+  background: var(--clr-gold);
+  color: var(--clr-bg) !important;
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: background var(--transition), transform var(--transition) !important;
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover {
+  background: var(--clr-gold-light) !important;
+  color: var(--clr-bg) !important;
+  transform: translateY(-1px);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 8px;
+  z-index: 1001;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--clr-cream);
+  transition: transform var(--transition), opacity var(--transition);
+}
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 320px;
+    height: 100dvh;
+    background: rgba(15, 14, 12, 0.97);
+    backdrop-filter: blur(30px);
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    transition: right var(--transition);
+  }
+  .nav-links.open { right: 0; }
+  .nav-links a { font-size: 1rem; }
+  .mobile-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+  }
+  .mobile-overlay.active { display: block; }
+}
+
+/* ══════════════════════════════════════════
+   HERO SECTION
+   ══════════════════════════════════════════ */
+.hero {
+  position: relative;
+  height: 100dvh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(201, 168, 76, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 30%, rgba(139, 58, 58, 0.1) 0%, transparent 50%),
+    linear-gradient(180deg, var(--clr-bg) 0%, #1a1510 40%, #1f1812 60%, var(--clr-bg) 100%);
+  z-index: 0;
+}
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(90deg, transparent, transparent 100px, rgba(201,168,76,0.03) 100px, rgba(201,168,76,0.03) 101px),
+    repeating-linear-gradient(0deg, transparent, transparent 100px, rgba(201,168,76,0.03) 100px, rgba(201,168,76,0.03) 101px);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding-inline: var(--space-md);
+}
+.hero-label {
+  font-family: var(--ff-sans);
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: var(--clr-gold);
+  margin-bottom: var(--space-sm);
+  animation: fadeInUp 1s ease 0.2s both;
+}
+.hero-title {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-hero);
+  color: var(--clr-cream);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: var(--space-sm);
+  animation: fadeInUp 1s ease 0.4s both;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--clr-gold);
+}
+.hero-subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: var(--clr-text-muted);
+  margin-bottom: var(--space-md);
+  animation: fadeInUp 1s ease 0.6s both;
+  max-width: 500px;
+  margin-inline: auto;
+}
+.hero-ctas {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s ease 0.8s both;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  font-family: var(--ff-sans);
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-weight: 600;
+}
+.btn-primary {
+  background: var(--clr-gold);
+  color: var(--clr-bg);
+}
+.btn-primary:hover {
+  background: var(--clr-gold-light);
+  color: var(--clr-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201, 168, 76, 0.3);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--clr-cream);
+  border: 1px solid rgba(201, 168, 76, 0.4);
+}
+.btn-outline:hover {
+  border-color: var(--clr-gold);
+  color: var(--clr-gold);
+  transform: translateY(-2px);
+}
+.hero-badge {
+  position: absolute;
+  bottom: var(--space-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(201, 168, 76, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 12px 28px;
+  font-size: var(--fs-small);
+  color: var(--clr-cream-dim);
+  z-index: 1;
+  animation: fadeInUp 1s ease 1s both;
+  white-space: nowrap;
+}
+.hero-badge strong { color: var(--clr-gold); }
+.hero-scroll {
+  position: absolute;
+  bottom: var(--space-sm);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  animation: bounce 2s infinite 2s;
+}
+.hero-scroll svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--clr-gold);
+  opacity: 0.5;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-10px); }
+  60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* ══════════════════════════════════════════
+   ÜBER UNS
+   ══════════════════════════════════════════ */
+.about {
+  background: var(--clr-bg-alt);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+.about-text p {
+  color: var(--clr-text-muted);
+  margin-bottom: var(--space-sm);
+}
+.about-quote {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-h3);
+  color: var(--clr-gold);
+  font-style: italic;
+  border-left: 3px solid var(--clr-gold);
+  padding-left: var(--space-md);
+  margin-block: var(--space-md);
+  line-height: 1.5;
+}
+.about-visual {
+  position: relative;
+  height: 400px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(201, 168, 76, 0.12) 0%, transparent 70%),
+    linear-gradient(135deg, var(--clr-bg-card) 0%, var(--clr-surface) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-visual::before {
+  content: '🍷';
+  font-size: 8rem;
+  opacity: 0.3;
+  filter: grayscale(30%);
+}
+.about-visual::after {
+  content: 'Seit 1987';
+  position: absolute;
+  bottom: var(--space-md);
+  right: var(--space-md);
+  font-family: var(--ff-serif);
+  font-size: 1.2rem;
+  color: var(--clr-gold);
+  background: rgba(15, 14, 12, 0.8);
+  padding: 8px 20px;
+  border-radius: var(--radius);
+}
+.about-stats {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+.stat {
+  text-align: center;
+}
+.stat-number {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-h2);
+  color: var(--clr-gold);
+  display: block;
+}
+.stat-label {
+  font-size: var(--fs-small);
+  color: var(--clr-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-visual { height: 250px; }
+}
+
+/* ══════════════════════════════════════════
+   SPEISEKARTE
+   ══════════════════════════════════════════ */
+.menu {
+  background: var(--clr-bg);
+}
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+.menu-tab {
+  background: transparent;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  color: var(--clr-cream-dim);
+  padding: 10px 24px;
+  font-family: var(--ff-sans);
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all var(--transition);
+  border-radius: 4px;
+}
+.menu-tab:hover {
+  border-color: var(--clr-gold);
+  color: var(--clr-gold);
+}
+.menu-tab.active {
+  background: var(--clr-gold);
+  color: var(--clr-bg);
+  border-color: var(--clr-gold);
+}
+.menu-category {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+.menu-category.active {
+  display: block;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md) var(--space-lg);
+}
+.menu-item {
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+}
+.menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-sm);
+  margin-bottom: 4px;
+}
+.menu-item-name {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-h3);
+  color: var(--clr-cream);
+  font-weight: 400;
+}
+.menu-item-line {
+  flex: 1;
+  border-bottom: 1px dotted rgba(201, 168, 76, 0.3);
+  min-width: 30px;
+  margin-bottom: 6px;
+}
+.menu-item-price {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-h3);
+  color: var(--clr-gold);
+  white-space: nowrap;
+}
+.menu-item-desc {
+  font-size: var(--fs-small);
+  color: var(--clr-text-muted);
+  line-height: 1.5;
+}
+.menu-item-tags {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+.tag {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+.tag-vegan {
+  background: rgba(90, 143, 74, 0.2);
+  color: var(--clr-vegan);
+}
+.tag-veggie {
+  background: rgba(196, 155, 42, 0.2);
+  color: var(--clr-veggie);
+}
+.tag-chef {
+  background: rgba(201, 168, 76, 0.15);
+  color: var(--clr-gold);
+}
+.allergen {
+  font-size: 0.7rem;
+  color: var(--clr-text-muted);
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .menu-grid { grid-template-columns: 1fr; }
+}
+
+/* Print: Speisekarte */
+@media print {
+  body { background: white; color: #333; }
+  .nav, .hero, .about, .highlights, .reviews, .reservation, .contact, .footer, .hero-scroll, .hero-badge { display: none !important; }
+  .menu { padding: 20px; }
+  .menu-category { display: block !important; margin-bottom: 30px; }
+  .menu-tabs { display: none; }
+  .menu-item { border-bottom: 1px dotted #ccc; }
+  .menu-item-name, .menu-item-price { color: #333; }
+  .section-title { color: #333; }
+  .section-label { color: #666; }
+  .tag { border: 1px solid #ccc; background: none; }
+}
+
+/* ══════════════════════════════════════════
+   HIGHLIGHTS / EMPFEHLUNGEN
+   ══════════════════════════════════════════ */
+.highlights {
+  background: var(--clr-bg-alt);
+}
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+.highlight-card {
+  position: relative;
+  height: 420px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--clr-bg-card), var(--clr-surface));
+}
+.highlight-card-bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  opacity: 0.4;
+  transition: transform var(--transition-slow), opacity var(--transition);
+}
+.highlight-card:hover .highlight-card-bg {
+  transform: scale(1.1);
+  opacity: 0.6;
+}
+.highlight-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-md);
+  background: linear-gradient(transparent, rgba(15, 14, 12, 0.95));
+  transform: translateY(40px);
+  transition: transform var(--transition);
+}
+.highlight-card:hover .highlight-card-content {
+  transform: translateY(0);
+}
+.highlight-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--clr-gold);
+  background: rgba(201, 168, 76, 0.15);
+  padding: 4px 12px;
+  border-radius: 3px;
+  margin-bottom: 8px;
+}
+.highlight-card h3 {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-h3);
+  color: var(--clr-cream);
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+.highlight-card p {
+  font-size: var(--fs-small);
+  color: var(--clr-text-muted);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.highlight-card:hover p { opacity: 1; }
+.highlight-price {
+  font-family: var(--ff-serif);
+  color: var(--clr-gold);
+  font-size: 1.1rem;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .highlights-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+  .highlight-card { height: 300px; }
+  .highlight-card-content { transform: translateY(0); }
+  .highlight-card p { opacity: 1; }
+}
+
+/* ══════════════════════════════════════════
+   BEWERTUNGEN
+   ══════════════════════════════════════════ */
+.reviews {
+  background: var(--clr-bg);
+}
+.reviews-slider {
+  display: flex;
+  gap: var(--space-md);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: var(--space-sm);
+}
+.reviews-slider::-webkit-scrollbar { display: none; }
+.review-card {
+  flex: 0 0 min(90vw, 380px);
+  scroll-snap-align: start;
+  background: var(--clr-bg-card);
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  position: relative;
+}
+.review-card::before {
+  content: '\201E';
+  font-family: var(--ff-serif);
+  font-size: 5rem;
+  color: var(--clr-gold);
+  opacity: 0.2;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  line-height: 1;
+}
+.review-stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: var(--space-sm);
+}
+.star {
+  color: var(--clr-gold);
+  font-size: 1rem;
+}
+.review-text {
+  font-size: var(--fs-body);
+  color: var(--clr-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-sm);
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+.review-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--clr-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--clr-bg);
+}
+.review-name {
+  font-weight: 600;
+  color: var(--clr-cream);
+  font-size: var(--fs-small);
+}
+.review-source {
+  font-size: 0.75rem;
+  color: var(--clr-text-muted);
+}
+.review-rating-summary {
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+.rating-big {
+  font-family: var(--ff-serif);
+  font-size: 3.5rem;
+  color: var(--clr-gold);
+}
+.rating-stars-big {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  font-size: 1.3rem;
+  color: var(--clr-gold);
+  margin-block: 4px;
+}
+.rating-count {
+  font-size: var(--fs-small);
+  color: var(--clr-text-muted);
+}
+
+/* ══════════════════════════════════════════
+   RESERVIERUNG
+   ══════════════════════════════════════════ */
+.reservation {
+  background: var(--clr-bg-alt);
+  position: relative;
+  overflow: hidden;
+}
+.reservation::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%);
+}
+.reservation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+.reservation-info h3 {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-h2);
+  color: var(--clr-cream);
+  font-weight: 400;
+  margin-bottom: var(--space-sm);
+}
+.reservation-info p {
+  color: var(--clr-text-muted);
+  margin-bottom: var(--space-md);
+}
+.reservation-phone {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--ff-serif);
+  font-size: var(--fs-h3);
+  color: var(--clr-gold);
+  margin-bottom: var(--space-sm);
+}
+.reservation-phone svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--clr-gold);
+}
+.form-group {
+  margin-bottom: var(--space-sm);
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+.form-group label {
+  display: block;
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--clr-cream-dim);
+  margin-bottom: 6px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--clr-bg);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: var(--radius);
+  color: var(--clr-cream);
+  font-family: var(--ff-sans);
+  font-size: var(--fs-body);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--clr-gold);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--clr-text-muted);
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23c9a84c' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+.form-group input:invalid:not(:placeholder-shown) {
+  border-color: var(--clr-accent);
+}
+.form-submit {
+  width: 100%;
+  padding: 16px;
+  margin-top: var(--space-sm);
+}
+.form-success {
+  display: none;
+  text-align: center;
+  padding: var(--space-lg) var(--space-md);
+}
+.form-success.show { display: block; }
+.form-success svg {
+  width: 64px;
+  height: 64px;
+  margin-bottom: var(--space-sm);
+}
+.form-success h3 {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-h2);
+  color: var(--clr-cream);
+  margin-bottom: 8px;
+}
+.form-success p {
+  color: var(--clr-text-muted);
+}
+.checkmark-circle {
+  stroke: var(--clr-success);
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  animation: checkStroke 0.6s ease forwards;
+}
+.checkmark-check {
+  stroke: var(--clr-success);
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: checkStroke 0.3s ease 0.5s forwards;
+}
+@keyframes checkStroke {
+  to { stroke-dashoffset: 0; }
+}
+
+@media (max-width: 768px) {
+  .reservation-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+/* ══════════════════════════════════════════
+   KONTAKT
+   ══════════════════════════════════════════ */
+.contact {
+  background: var(--clr-bg);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+.contact-item {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+.contact-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--clr-gold);
+}
+.contact-item h4 {
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--clr-gold);
+  margin-bottom: 2px;
+}
+.contact-item p, .contact-item a {
+  color: var(--clr-text-muted);
+  font-size: var(--fs-body);
+}
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-sm);
+}
+.hours-table td {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+  font-size: var(--fs-body);
+}
+.hours-table td:first-child {
+  color: var(--clr-cream-dim);
+  font-weight: 500;
+}
+.hours-table td:last-child {
+  text-align: right;
+  color: var(--clr-text-muted);
+}
+.hours-table tr.closed td:last-child {
+  color: var(--clr-accent);
+}
+.map-placeholder {
+  width: 100%;
+  height: 350px;
+  border-radius: var(--radius-lg);
+  background: var(--clr-bg-card);
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  color: var(--clr-text-muted);
+}
+.map-placeholder svg {
+  width: 48px;
+  height: 48px;
+  stroke: var(--clr-gold);
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+/* ══════════════════════════════════════════
+   FOOTER
+   ══════════════════════════════════════════ */
+.footer {
+  background: var(--clr-bg-alt);
+  border-top: 1px solid rgba(201, 168, 76, 0.1);
+  padding-block: var(--space-lg) var(--space-md);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+.footer-brand .nav-logo {
+  font-size: 1.6rem;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+.footer-brand p {
+  color: var(--clr-text-muted);
+  font-size: var(--fs-small);
+  max-width: 280px;
+}
+.footer h4 {
+  font-family: var(--ff-sans);
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--clr-gold);
+  margin-bottom: var(--space-sm);
+}
+.footer-links {
+  list-style: none;
+}
+.footer-links li { margin-bottom: 8px; }
+.footer-links a {
+  color: var(--clr-text-muted);
+  font-size: var(--fs-small);
+  transition: color var(--transition);
+}
+.footer-links a:hover { color: var(--clr-gold); }
+.footer-social {
+  display: flex;
+  gap: var(--space-sm);
+}
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), transform var(--transition);
+}
+.footer-social a:hover {
+  background: var(--clr-gold);
+  transform: translateY(-2px);
+}
+.footer-social a:hover svg { stroke: var(--clr-bg); }
+.footer-social svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--clr-gold);
+  transition: stroke var(--transition);
+}
+.footer-ig {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--clr-text-muted);
+  font-size: var(--fs-small);
+  margin-top: var(--space-sm);
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(201, 168, 76, 0.08);
+  font-size: 0.8rem;
+  color: var(--clr-text-muted);
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+.footer-legal {
+  display: flex;
+  gap: var(--space-md);
+}
+.footer-legal a { color: var(--clr-text-muted); font-size: 0.8rem; }
+.footer-legal a:hover { color: var(--clr-gold); }
+
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+}
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="Goldene Gabel — Startseite">Goldene <span>Gabel</span></a>
+    <button class="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" role="menubar">
+      <li role="none"><a href="#about" role="menuitem">Über uns</a></li>
+      <li role="none"><a href="#menu" role="menuitem">Speisekarte</a></li>
+      <li role="none"><a href="#highlights" role="menuitem">Empfehlungen</a></li>
+      <li role="none"><a href="#reviews" role="menuitem">Bewertungen</a></li>
+      <li role="none"><a href="#contact" role="menuitem">Kontakt</a></li>
+      <li role="none"><a href="#reservation" class="nav-cta" role="menuitem">Reservieren</a></li>
+    </ul>
+  </div>
+  <div class="mobile-overlay" aria-hidden="true"></div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-content">
+    <p class="hero-label">Gehobene deutsch-mediterrane Küche</p>
+    <h1 class="hero-title">Wo Tradition auf <em>Genuss</em> trifft</h1>
+    <p class="hero-subtitle">Saisonale Zutaten, meisterhafte Zubereitung und ein Ambiente, das den Abend unvergesslich macht.</p>
+    <div class="hero-ctas">
+      <a href="#menu" class="btn btn-primary">Speisekarte ansehen</a>
+      <a href="#reservation" class="btn btn-outline">Tisch reservieren</a>
+    </div>
+  </div>
+  <div class="hero-badge">
+    <strong>Di – Fr</strong> 11:30 – 23:00 &nbsp;·&nbsp; <strong>Sa</strong> 17:00 – 00:00 &nbsp;·&nbsp; <strong>So</strong> 11:30 – 15:00
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+  </div>
+</section>
+
+<!-- ═══ ÜBER UNS ═══ -->
+<section class="about section-padding" id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Unsere Geschichte</span>
+      <h2 class="section-title">Seit 1987 im Herzen Münchens</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>Was als kleines Familienlokal in der Maximilianstraße begann, ist heute eines der angesehensten Restaurants Münchens. Küchenchef Markus Brenner verbindet bayerische Traditionen mit mediterraner Leichtigkeit — stets mit dem Respekt vor erstklassigen Zutaten.</p>
+        <blockquote class="about-quote">
+          „Gutes Essen braucht keine Komplexität — nur die besten Zutaten, Geduld und Leidenschaft."
+        </blockquote>
+        <p>Unsere Zutaten stammen von regionalen Erzeugern und ausgewählten Partnern aus Italien und Griechenland. Jedes Gericht erzählt eine Geschichte von Herkunft, Handwerk und Hingabe.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-number">37</span>
+            <span class="stat-label">Jahre</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">324</span>
+            <span class="stat-label">Bewertungen</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">4.8</span>
+            <span class="stat-label">Sterne</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual reveal" aria-label="Dekoratives Bild — Weinglas"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPEISEKARTE ═══ -->
+<section class="menu section-padding" id="menu">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Unsere Karte</span>
+      <h2 class="section-title">Speisekarte</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="menu-tabs reveal" role="tablist">
+      <button class="menu-tab active" role="tab" aria-selected="true" data-tab="vorspeisen">Vorspeisen</button>
+      <button class="menu-tab" role="tab" aria-selected="false" data-tab="hauptgerichte">Hauptgerichte</button>
+      <button class="menu-tab" role="tab" aria-selected="false" data-tab="desserts">Desserts</button>
+      <button class="menu-tab" role="tab" aria-selected="false" data-tab="getraenke">Getränke</button>
+    </div>
+
+    <!-- Vorspeisen -->
+    <div class="menu-category active" id="vorspeisen" role="tabpanel">
+      <div class="menu-grid">
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Carpaccio vom Rind</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 16</span>
+          </div>
+          <p class="menu-item-desc">Hauchdünn geschnitten mit Rucola, Parmesan und Trüffelöl · <span class="allergen">A, G, M</span></p>
+          <div class="menu-item-tags"><span class="tag tag-chef">Chef's Choice</span></div>
+        </div>
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Burrata auf Ofentomaten</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 14</span>
+          </div>
+          <p class="menu-item-desc">Cremige Burrata mit geschmorten Kirschtomaten und Basilikum-Pesto · <span class="allergen">G</span></p>
+          <div class="menu-item-tags"><span class="tag tag-veggie">Vegetarisch</span></div>
+        </div>
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Bayerische Zwiebelsuppe</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 11</span>
+          </div>
+          <p class="menu-item-desc">Karamellisierte Zwiebeln mit Weißbier, überbacken mit Bergkäse · <span class="allergen">A, G</span></p>
+        </div>
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Rote-Bete-Carpaccio</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 12</span>
+          </div>
+          <p class="menu-item-desc">Marinierte Rote Bete mit Walnüssen, Ziegenkäse-Mousse und Honig-Senf-Dressing · <span class="allergen">H, G</span></p>
+          <div class="menu-item-tags"><span class="tag tag-veggie">Vegetarisch</span></div>
+        </div>
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Tatar vom Lachs</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 17</span>
+          </div>
+          <p class="menu-item-desc">Frischer Lachs mit Avocado, Yuzu-Dressing und knusprigem Sesam · <span class="allergen">D, F, K</span></p>
+        </div>
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Mediterraner Hummus</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 10</span>
+          </div>
+          <p class="menu-item-desc">Hausgemachter Kichererbsen-Hummus mit Paprika-Öl und warmem Fladenbrot · <span class="allergen">A</span></p>
+          <div class="menu-item-tags"><span class="tag tag-vegan">Vegan</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hauptgerichte -->
+    <div class="menu-category" id="hauptgerichte" role="tabpanel">
+      <div class="menu-grid">
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Rinderfilet „Goldene Gabel"</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 38</span>
+          </div>
+          <p class="menu-item-desc">200g Filet vom Weiderind mit Trüffel-Kartoffelpüree, glasierten Möhren und Rotweinjus · <span class="allergen">G, M</span></p>
+          <div class="menu-item-tags"><span class="tag tag-chef">Chef's Choice</span></div>
+        </div>
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Bayerischer Schweinebauch</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 26</span>
+          </div>
+          <p class="menu-item-desc">12 Stunden geschmort mit Dunkelbier-Sauce, Knödel und Blaukraut · <span class="allergen">A, G</span></p>
+        </div>
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Wolfsbarsch Mediterran</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 32</span>
+          </div>
+          <p class="menu-item-desc">Ganzer Wolfsbarsch aus dem Ofen mit Oliven, Kapern, Kirschtomaten und Rosmarinkartoffeln · <span class="allergen">D</span></p>
+        </div>
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Handgemachte Pappardelle</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 22</span>
+          </div>
+          <p class="menu-item-desc">Frische Pasta mit geschmortem Ochsenschwanz-Ragù und Grana Padano · <span class="allergen">A, C, G</span></p>
+        </div>
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Risotto mit Steinpilzen</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 24</span>
+          </div>
+          <p class="menu-item-desc">Cremiges Carnaroli-Risotto mit frischen Steinpilzen, Thymian und Parmesan · <span class="allergen">G</span></p>
+          <div class="menu-item-tags"><span class="tag tag-veggie">Vegetarisch</span></div>
+        </div>
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Auberginen-Involtini</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 20</span>
+          </div>
+          <p class="menu-item-desc">Gegrillte Aubergine gefüllt mit Spinat und Cashew-Ricotta, dazu Tomatensauce · <span class="allergen">H</span></p>
+          <div class="menu-item-tags"><span class="tag tag-vegan">Vegan</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desserts -->
+    <div class="menu-category" id="desserts" role="tabpanel">
+      <div class="menu-grid">
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Panna Cotta</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 11</span>
+          </div>
+          <p class="menu-item-desc">Klassische Vanille-Panna-Cotta mit Himbeer-Coulis und frischer Minze · <span class="allergen">G</span></p>
+        </div>
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Bayerischer Apfelstrudel</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 12</span>
+          </div>
+          <p class="menu-item-desc">Hausgemacht mit Vanillesauce und Zimt-Eis · <span class="allergen">A, C, G</span></p>
+          <div class="menu-item-tags"><span class="tag tag-chef">Chef's Choice</span></div>
+        </div>
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Tiramisu</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 12</span>
+          </div>
+          <p class="menu-item-desc">Nach Originalrezept mit Mascarpone und Espresso aus unserer Siebträgermaschine · <span class="allergen">A, C, G</span></p>
+        </div>
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Schokoladen-Fondant</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 13</span>
+          </div>
+          <p class="menu-item-desc">Warmes Schokoladentörtchen mit flüssigem Kern, Salzkaramell und Vanille-Eis · <span class="allergen">A, C, G</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Getränke -->
+    <div class="menu-category" id="getraenke" role="tabpanel">
+      <div class="menu-grid">
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Aperol Spritz</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 10</span>
+          </div>
+          <p class="menu-item-desc">Der Klassiker — Aperol, Prosecco, Soda, Orange</p>
+        </div>
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Münchner Gin Tonic</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 12</span>
+          </div>
+          <p class="menu-item-desc">The Duke Gin aus München mit Fever-Tree Mediterranean Tonic</p>
+        </div>
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Hauswein Rot / Weiß</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 7 / 0,2l</span>
+          </div>
+          <p class="menu-item-desc">Sorgfältig ausgewählt — wechselnd, fragen Sie Ihren Kellner</p>
+        </div>
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Augustiner Helles</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 5 / 0,5l</span>
+          </div>
+          <p class="menu-item-desc">Frisch vom Fass — ein Münchner Original</p>
+        </div>
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Hausgemachte Limonade</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 6</span>
+          </div>
+          <p class="menu-item-desc">Zitrone-Ingwer oder Holunderblüte — saisonal frisch zubereitet</p>
+          <div class="menu-item-tags"><span class="tag tag-vegan">Alkoholfrei</span></div>
+        </div>
+        <div class="menu-item reveal">
+          <div class="menu-item-header">
+            <span class="menu-item-name">Espresso / Cappuccino</span>
+            <span class="menu-item-line"></span>
+            <span class="menu-item-price">€ 3 / € 5</span>
+          </div>
+          <p class="menu-item-desc">Frisch gemahlen aus unserer La Marzocca Siebträgermaschine</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EMPFEHLUNGEN ═══ -->
+<section class="highlights section-padding" id="highlights">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Unsere Empfehlungen</span>
+      <h2 class="section-title">Die Lieblinge unserer Gäste</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="highlights-grid">
+      <div class="highlight-card reveal" tabindex="0">
+        <div class="highlight-card-bg" aria-hidden="true">🥩</div>
+        <div class="highlight-card-content">
+          <span class="highlight-badge">Chef's Choice</span>
+          <h3>Rinderfilet „Goldene Gabel"</h3>
+          <p>Unser Signature Dish — zartes Weiderind-Filet mit Trüffel-Kartoffelpüree und hausgemachtem Rotweinjus. Seit 1987 auf der Karte.</p>
+          <span class="highlight-price">€ 38</span>
+        </div>
+      </div>
+      <div class="highlight-card reveal" tabindex="0">
+        <div class="highlight-card-bg" aria-hidden="true">🐟</div>
+        <div class="highlight-card-content">
+          <span class="highlight-badge">Mediterran</span>
+          <h3>Wolfsbarsch aus dem Ofen</h3>
+          <p>Ganzer Wolfsbarsch mit Oliven, Kapern und Kirschtomaten — ein Stück Mittelmeer auf Ihrem Teller.</p>
+          <span class="highlight-price">€ 32</span>
+        </div>
+      </div>
+      <div class="highlight-card reveal" tabindex="0">
+        <div class="highlight-card-bg" aria-hidden="true">🍫</div>
+        <div class="highlight-card-content">
+          <span class="highlight-badge">Dessert-Star</span>
+          <h3>Schokoladen-Fondant</h3>
+          <p>Warmes Törtchen mit flüssigem Kern, Salzkaramell und hausgemachtem Vanille-Eis — purer Genuss.</p>
+          <span class="highlight-price">€ 13</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BEWERTUNGEN ═══ -->
+<section class="reviews section-padding" id="reviews">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Das sagen unsere Gäste</span>
+      <h2 class="section-title">Bewertungen</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="review-rating-summary reveal">
+      <span class="rating-big">4.8</span>
+      <div class="rating-stars-big" aria-label="4.8 von 5 Sternen">★★★★★</div>
+      <span class="rating-count">Basierend auf 324 Bewertungen</span>
+    </div>
+    <div class="reviews-slider reveal" role="region" aria-label="Kundenbewertungen">
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 Sterne">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="review-text">„Ein Abend in der Goldenen Gabel ist wie eine kulinarische Reise. Das Rinderfilet ist schlichtweg perfekt — und der Service aufmerksam ohne aufdringlich zu sein. Unser absolutes Lieblingsrestaurant."</p>
+        <div class="review-author">
+          <div class="review-avatar">MK</div>
+          <div>
+            <div class="review-name">Maria K.</div>
+            <div class="review-source">Google · vor 2 Wochen</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 Sterne">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="review-text">„Wir kommen seit Jahren hierher und werden nie enttäuscht. Die Kombination aus bayerischer und mediterraner Küche ist einzigartig. Der Apfelstrudel ist ein Traum!"</p>
+        <div class="review-author">
+          <div class="review-avatar">TS</div>
+          <div>
+            <div class="review-name">Thomas S.</div>
+            <div class="review-source">TripAdvisor · vor 1 Monat</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 Sterne">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="review-text">„Perfekt für ein romantisches Abendessen. Das Ambiente ist warm und elegant, die Weinkarte hervorragend kuratiert. Der Wolfsbarsch war das beste Fischgericht, das ich in München hatte."</p>
+        <div class="review-author">
+          <div class="review-avatar">LH</div>
+          <div>
+            <div class="review-name">Laura H.</div>
+            <div class="review-source">Google · vor 3 Wochen</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars" aria-label="4 Sterne">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star" style="opacity:0.3">★</span>
+        </div>
+        <p class="review-text">„Hervorragend für Business-Lunch! Schneller Service, exzellente Qualität, angenehmes Ambiente. Die handgemachten Pappardelle sind ein Gedicht. Einziger Punkt: Am Wochenende unbedingt reservieren!"</p>
+        <div class="review-author">
+          <div class="review-avatar">JW</div>
+          <div>
+            <div class="review-name">Jan W.</div>
+            <div class="review-source">Google · vor 1 Woche</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RESERVIERUNG ═══ -->
+<section class="reservation section-padding" id="reservation">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Tisch reservieren</span>
+      <h2 class="section-title">Wir freuen uns auf Sie</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="reservation-grid">
+      <div class="reservation-info reveal">
+        <h3>Reservieren Sie Ihren Tisch</h3>
+        <p>Für das beste Erlebnis empfehlen wir eine Reservierung, besonders am Wochenende. Sie können bequem über unser Formular reservieren oder uns direkt anrufen.</p>
+        <a href="tel:+498912345678" class="reservation-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          089 / 123 456 78
+        </a>
+        <p style="color: var(--clr-text-muted); font-size: var(--fs-small);">Montag — Ruhetag<br>Di – Fr: 11:30 – 23:00 Uhr<br>Sa: 17:00 – 00:00 Uhr<br>So: 11:30 – 15:00 Uhr (Brunch)</p>
+      </div>
+      <div class="reveal">
+        <form id="reservationForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="res-name">Name *</label>
+              <input type="text" id="res-name" placeholder="Ihr Name" required>
+            </div>
+            <div class="form-group">
+              <label for="res-phone">Telefon *</label>
+              <input type="tel" id="res-phone" placeholder="+49 ..." required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="res-date">Datum *</label>
+              <input type="date" id="res-date" required>
+            </div>
+            <div class="form-group">
+              <label for="res-time">Uhrzeit *</label>
+              <select id="res-time" required>
+                <option value="" disabled selected>Wählen…</option>
+                <option>11:30</option><option>12:00</option><option>12:30</option>
+                <option>13:00</option><option>13:30</option><option>14:00</option>
+                <option>17:00</option><option>17:30</option><option>18:00</option>
+                <option>18:30</option><option>19:00</option><option>19:30</option>
+                <option>20:00</option><option>20:30</option><option>21:00</option>
+                <option>21:30</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="res-guests">Personenzahl *</label>
+            <select id="res-guests" required>
+              <option value="" disabled selected>Wählen…</option>
+              <option>1 Person</option><option>2 Personen</option>
+              <option>3 Personen</option><option>4 Personen</option>
+              <option>5 Personen</option><option>6 Personen</option>
+              <option>7+ Personen (bitte anrufen)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="res-message">Sonderwünsche</label>
+            <textarea id="res-message" rows="3" placeholder="Allergien, Anlass, besondere Wünsche…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">Reservierung anfragen</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <svg viewBox="0 0 52 52" fill="none">
+            <circle class="checkmark-circle" cx="26" cy="26" r="24" stroke-width="3" fill="none"/>
+            <path class="checkmark-check" d="M14 27l8 8 16-16" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>Vielen Dank!</h3>
+          <p>Ihre Reservierungsanfrage wurde gesendet. Wir bestätigen Ihren Tisch in Kürze telefonisch oder per E-Mail.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KONTAKT & ANFAHRT ═══ -->
+<section class="contact section-padding" id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">So finden Sie uns</span>
+      <h2 class="section-title">Kontakt & Anfahrt</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h4>Adresse</h4>
+            <p>Maximilianstraße 42<br>80539 München</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <h4>Telefon</h4>
+            <a href="tel:+498912345678">089 / 123 456 78</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <h4>E-Mail</h4>
+            <a href="mailto:info@goldene-gabel.de">info@goldene-gabel.de</a>
+          </div>
+        </div>
+        <h4 style="color: var(--clr-gold); margin-top: var(--space-md); font-size: var(--fs-small); text-transform: uppercase; letter-spacing: 1px;">Öffnungszeiten</h4>
+        <table class="hours-table">
+          <tr class="closed"><td>Montag</td><td>Ruhetag</td></tr>
+          <tr><td>Dienstag – Freitag</td><td>11:30 – 23:00</td></tr>
+          <tr><td>Samstag</td><td>17:00 – 00:00</td></tr>
+          <tr><td>Sonntag</td><td>11:30 – 15:00 (Brunch)</td></tr>
+        </table>
+      </div>
+      <div class="reveal">
+        <div class="map-placeholder" aria-label="Kartenplatzhalter — hier kann Google Maps eingebettet werden">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Google Maps Embed</span>
+          <span style="font-size: 0.8rem;">Maximilianstraße 42, 80539 München</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="nav-logo">Goldene <span>Gabel</span></span>
+        <p>Gehobene deutsch-mediterrane Küche seit 1987. Im Herzen von München, Maximilianstraße 42.</p>
+        <div class="footer-social" style="margin-top: var(--space-sm);">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="TripAdvisor">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </a>
+        </div>
+        <div class="footer-ig">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/></svg>
+          Folge uns: @goldenegabel
+        </div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#about">Über uns</a></li>
+          <li><a href="#menu">Speisekarte</a></li>
+          <li><a href="#highlights">Empfehlungen</a></li>
+          <li><a href="#reviews">Bewertungen</a></li>
+          <li><a href="#reservation">Reservieren</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Öffnungszeiten</h4>
+        <ul class="footer-links">
+          <li><span style="color: var(--clr-accent);">Mo: Ruhetag</span></li>
+          <li>Di – Fr: 11:30 – 23:00</li>
+          <li>Sa: 17:00 – 00:00</li>
+          <li>So: 11:30 – 15:00</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul class="footer-links">
+          <li>Maximilianstraße 42</li>
+          <li>80539 München</li>
+          <li><a href="tel:+498912345678">089 / 123 456 78</a></li>
+          <li><a href="mailto:info@goldene-gabel.de">info@goldene-gabel.de</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Goldene Gabel. Alle Rechte vorbehalten.</span>
+      <div class="footer-legal">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">AGB</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ══════════════════════════════════════════
+   NAVIGATION — Sticky, Shrink, Active State
+   ══════════════════════════════════════════ */
+(() => {
+  const nav = document.querySelector('.nav');
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  const overlay = document.querySelector('.mobile-overlay');
+  const links = document.querySelectorAll('.nav-links a');
+
+  // Scroll → shrink nav
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  // Hamburger toggle
+  function toggleMenu() {
+    const isOpen = navLinks.classList.toggle('open');
+    hamburger.classList.toggle('active');
+    overlay.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+  hamburger.addEventListener('click', toggleMenu);
+  overlay.addEventListener('click', toggleMenu);
+
+  // Close menu on link click
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navLinks.classList.contains('open')) toggleMenu();
+    });
+  });
+
+  // Intersection Observer — active nav link
+  const sections = document.querySelectorAll('section[id]');
+  const observerNav = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if (active && !active.classList.contains('nav-cta')) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -60% 0px' });
+  sections.forEach(s => observerNav.observe(s));
+})();
+
+/* ══════════════════════════════════════════
+   SCROLL REVEAL ANIMATIONS
+   ══════════════════════════════════════════ */
+(() => {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+})();
+
+/* ══════════════════════════════════════════
+   SPEISEKARTE TABS
+   ══════════════════════════════════════════ */
+(() => {
+  const tabs = document.querySelectorAll('.menu-tab');
+  const categories = document.querySelectorAll('.menu-category');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      categories.forEach(c => c.classList.remove('active'));
+
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      const target = document.getElementById(tab.dataset.tab);
+      if (target) {
+        target.classList.add('active');
+        // Re-trigger reveal for items in new tab
+        target.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+          el.classList.add('visible');
+        });
+      }
+    });
+  });
+})();
+
+/* ══════════════════════════════════════════
+   RESERVIERUNGS-FORMULAR
+   ══════════════════════════════════════════ */
+(() => {
+  const form = document.getElementById('reservationForm');
+  const success = document.getElementById('formSuccess');
+  if (!form) return;
+
+  // Set min date to today
+  const dateInput = document.getElementById('res-date');
+  if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Basic validation
+    const name = document.getElementById('res-name');
+    const phone = document.getElementById('res-phone');
+    const date = document.getElementById('res-date');
+    const time = document.getElementById('res-time');
+    const guests = document.getElementById('res-guests');
+
+    let valid = true;
+    [name, phone, date, time, guests].forEach(field => {
+      if (!field.value.trim()) {
+        field.style.borderColor = 'var(--clr-accent)';
+        valid = false;
+      } else {
+        field.style.borderColor = '';
+      }
+    });
+
+    if (!valid) return;
+
+    // Show success (demo — no real submission)
+    form.style.display = 'none';
+    success.classList.add('show');
+  });
+})();
+
+/* ══════════════════════════════════════════
+   SMOOTH SCROLL FÜR SAFARI-FALLBACK
+   ══════════════════════════════════════════ */
+(() => {
+  if ('scrollBehavior' in document.documentElement.style) return;
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
