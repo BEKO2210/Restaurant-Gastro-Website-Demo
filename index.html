@@ -321,14 +321,9 @@ a:hover { color: var(--clr-gold-light); }
     display: block;
   }
   .hero-badge {
-    white-space: normal;
-    padding: 10px 20px;
-    text-align: center;
-    max-width: 90%;
+    padding: 10px 16px;
     font-size: 0.75rem;
-    bottom: var(--space-xl);
   }
-  .hero-scroll { bottom: var(--space-md); }
   .hero-title { font-size: clamp(2rem, 8vw, 3rem); }
   .hero-subtitle { font-size: 0.95rem; }
   .hero-ctas { flex-direction: column; align-items: center; }
@@ -352,10 +347,12 @@ a:hover { color: var(--clr-gold-light); }
   height: 100dvh;
   min-height: 600px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   overflow: hidden;
+  padding: var(--nav-height) var(--space-md) var(--space-2xl);
 }
 .hero-bg {
   position: absolute;
@@ -378,7 +375,7 @@ a:hover { color: var(--clr-gold-light); }
   position: relative;
   z-index: 1;
   max-width: 800px;
-  padding-inline: var(--space-md);
+  width: 100%;
 }
 .hero-label {
   font-family: var(--ff-sans);
@@ -452,10 +449,9 @@ a:hover { color: var(--clr-gold-light); }
   transform: translateY(-2px);
 }
 .hero-badge {
-  position: absolute;
-  bottom: var(--space-lg);
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  z-index: 1;
+  margin-top: var(--space-md);
   background: rgba(201, 168, 76, 0.1);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(201, 168, 76, 0.2);
@@ -463,9 +459,8 @@ a:hover { color: var(--clr-gold-light); }
   padding: 12px 28px;
   font-size: var(--fs-small);
   color: var(--clr-cream-dim);
-  z-index: 1;
   animation: fadeInUp 1s ease 1s both;
-  white-space: nowrap;
+  text-align: center;
 }
 .hero-badge strong { color: var(--clr-gold); }
 .hero-scroll {
