@@ -99,6 +99,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-height-scrolled);
+  overflow-x: clip;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -115,7 +116,6 @@ body {
   line-height: 1.7;
   color: var(--clr-text);
   background-color: var(--clr-bg);
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -175,12 +175,10 @@ a:hover { color: var(--clr-gold-light); }
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.4s ease, transform 0.4s ease;
-  will-change: opacity, transform;
 }
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
-  will-change: auto;
+  transform: none;
 }
 
 /* ══════════════════════════════════════════
@@ -194,7 +192,6 @@ a:hover { color: var(--clr-gold-light); }
   height: var(--nav-height);
   z-index: 1000;
   transition: height 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
-  will-change: height, background-color;
   display: flex;
   align-items: center;
 }
@@ -312,6 +309,7 @@ a:hover { color: var(--clr-gold-light); }
     gap: var(--space-md);
     padding: var(--space-lg);
     transition: right var(--transition);
+    z-index: 1001;
   }
   .nav-links.open { right: 0; }
   .nav-links a { font-size: 1rem; letter-spacing: 1px; }
@@ -367,9 +365,7 @@ a:hover { color: var(--clr-gold-light); }
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    repeating-linear-gradient(90deg, transparent, transparent 100px, rgba(201,168,76,0.03) 100px, rgba(201,168,76,0.03) 101px),
-    repeating-linear-gradient(0deg, transparent, transparent 100px, rgba(201,168,76,0.03) 100px, rgba(201,168,76,0.03) 101px);
+  background: radial-gradient(circle at 50% 50%, rgba(201,168,76,0.04) 0%, transparent 70%);
 }
 .hero-content {
   position: relative;
@@ -746,7 +742,7 @@ a:hover { color: var(--clr-gold-light); }
   align-items: center;
   justify-content: center;
   opacity: 0.4;
-  transition: transform var(--transition-slow), opacity var(--transition);
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 .highlight-card-bg svg {
   width: 80px;
@@ -1887,7 +1883,7 @@ a:hover { color: var(--clr-gold-light); }
       });
       ticking = true;
     }
-  });
+  }, { passive: true });
 
   // Hamburger toggle
   function toggleMenu() {
